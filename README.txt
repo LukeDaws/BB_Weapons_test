@@ -1,0 +1,1 @@
+This program is to compare weapons in battle brothers. It only takes into account the weapons stats and nothing eles against hp and armour.
