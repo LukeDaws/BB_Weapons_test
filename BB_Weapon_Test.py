@@ -22,6 +22,41 @@ weapon_dict = {
         "ignore_armour" : .25,
         "eff_armour" : .90,
         "fatigue": 6
+    },
+    "Crypt Cleaver": {
+        "min_damage" : 60,
+        "max_damage" : 80,
+        "ignore_armour" : .25,
+        "eff_armour" : 1.20,
+        "fatigue": 16
+    },
+    "Fire Lance": {
+        "min_damage" : 30,
+        "max_damage" : 35,
+        "ignore_armour" : .25,
+        "eff_armour" : 1.10,
+        "fatigue": 12
+    },
+     "Nomad Mace": {
+        "min_damage" : 25,
+        "max_damage" : 35,
+        "ignore_armour" : .40,
+        "eff_armour" : .90,
+        "fatigue": 8
+    },
+    "Light Southern Mace": {
+        "min_damage" : 30,
+        "max_damage" : 40,
+        "ignore_armour" : .40,
+        "eff_armour" : 1.10,
+        "fatigue": 10
+    },
+     "Morning Star": {
+        "min_damage" : 30,
+        "max_damage" : 45,
+        "ignore_armour" : .40,
+        "eff_armour" : 1.00,
+        "fatigue": 10
     }
             
             }      
@@ -52,9 +87,11 @@ def weapon_comparison(weapon_1, weapon_2):
 
         for i in weapons:
             #Change this based on enemy health.
-            hp = 100
+            hp = 55
+            #hp = 100
             #Change this for value that will reduce damage.
-            armour = 0
+            armour =  5
+            #armour = 460 
             turns = 0
             #Based on weapon stats.
             ignore_armour_percent = weapon_dict[i]["ignore_armour"]
@@ -105,7 +142,9 @@ def weapon_comparison(weapon_1, weapon_2):
             best = v 
     for v in overall:
         if v == best:
-            print(overall[v])
+            print(overall)
+            print(f"\n Best weapon to use overall is {overall[v]}")
+            return overall[v]
 
 if __name__ == '__main__':
-    weapon_comparison("Hammer","Goedendag")
+    weapon_comparison("Morning Star","Light Southern Mace")
