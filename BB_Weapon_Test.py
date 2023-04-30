@@ -93,39 +93,31 @@ def weapon_comparison(weapon_1, weapon_2):
             armour =  5
             #armour = 460 
             turns = 0
-            #Based on weapon stats.
             ignore_armour_percent = weapon_dict[i]["ignore_armour"]
-            #Based on weapon stats.
             eff_armour_percent = weapon_dict[i]["eff_armour"]
-            #Will keep going until enemy has reached 0 hp
             while hp > 0:
                 while armour > 0:
                     #base damage is recalcualted to simulate different attacks, which changes potential damage.
                     base_damage = random.randrange(weapon_dict[i]["min_damage"],weapon_dict[i]["max_damage"])
-                    #Based off battlebrothers wiki.
+                    #All damage formulas are from the battlebrothers wiki.
                     armour_damage = (base_damage * modifiers * eff_armour_percent)
                     armour = armour - armour_damage
-                    #If armour is still remaing, hp damage and armour damage is calcualted here.
                     if armour > 0:
                         hp_damage = base_damage * modifiers * ignore_armour_percent - armour * 0.1
                         hp = hp - hp_damage
                         turns += 1
                     #if armour is destroyed (reduced beyond 0) the remaining damage goes through to damage hp. 
                     else:
-                        #Based off battlebrothers wiki.
                         hp_damage = base_damage * modifiers * (1-ignore_armour_percent) - (armour_damage + armour)
                         hp = hp - hp_damage
                         turns += 1
-                #base damage is calcualted if there is no armour.
+                #base damage needs to be calcualted here if there is no armour.
                 base_damage = random.randrange(weapon_dict[i]["min_damage"],weapon_dict[i]["max_damage"])
                 if hp > 0:
-                    #Based off battlebrothers wiki.
                     hp_damage = base_damage * modifiers
                     hp = hp - hp_damage 
                     turns += 1
-            #Stores total turns weapon took to kill enemy.
             weapons[i] = turns
-            #Stores max amount of fatigue it took per iteration to kill an enemy.
             max_fatigue = turns * weapon_dict[i]["fatigue"]
             if max_fatigue > overall[i]["fatigue"]:
                 overall[i]["fatigue"] = max_fatigue
