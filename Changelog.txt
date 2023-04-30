@@ -1,16 +1,28 @@
 Changelog:
+30/04/2023 -
+-Added Django framework for creating web app to run the python script.
+-Added Django App "comparison".
+-Added "comparison/views.py" to include text to welcome people to a page.
+-Added "comparison/urls.py" to include url pattern.
+-Added "BB_Weapons_test_site/urls.py" to include url pattern to "comparison/urls.py".
+-Changed "BB_Weapons_test_site/settings.py" so that the timezone is set to Australia/Melbourne and language is en-au.
+-Added migrations using the "py manage.py migrate" command.
+-Added class in "comaprison/models.py" called weapons with the following variables: weapon_name, min_damage, max_damage, ignore_armour, eff_armour, fatigue.
+
+-Added 'comparison.apps.ComparisonConfig' in INSTALLED_APPS list in "BB_Weapons_test_site/settings.py".
+
 29/04/2023 - 
 -Added program that will compare two weapons against each other.
 -Added dictionary of 3 weapons with stats - Hammer, Goedendag, Milita spear.
-- Added the comparison as a function that requires two arguments. These arguments are the two weapons for comparison. 
+-Added the comparison as a function that requires two arguments. These arguments are the two weapons for comparison. 
 -Added weapons dictionary to keep track of the amount of turns it took a weapon to defeat an enemy.  
 - Added modifier variable which is needed for the damage calculations it can be changed in the game but for now it is left as 1.
-- Added an overall dictionary that keeps track of statistics of the weapons over the many iterations. "weapon name" = the name of the weapon being compared. "wins" = how many times the weapon has defeated the enemy the quickest or drawed. "fatigue" = the max amount of fatigue the weapon has spent to defeat an enemy.
-- Added a for loop that simulates 10000 comparisons as the weapons have a damage range and should provide the weapon that wins the most on average.
-- Added a for loop that goes through each weapon. in the for loop it has: "hp" = max health of the enemy. When it is less than 0 the enemy is dead. "armour" = the amount of armour a character is wearing. this value effects damage reduction. "turns" = the amount of turns it has taken to reduce the hp down to 0. "ignore_armour_percent" = the amount of damage in percentage a weapon will ignore the armour. "eff_armour_percent" = the amount of damage a weapon will do to armour.
-- Added a while loop that will continue to run if the hp is greater than 0. Base damage is calculated here since it is a range it randomises based on its min and max damage.
+-Added an overall dictionary that keeps track of statistics of the weapons over the many iterations. "weapon name" = the name of the weapon being compared. "wins" = how many times the weapon has defeated the enemy the quickest or drawed. "fatigue" = the max amount of fatigue the weapon has spent to defeat an enemy.
+-Added a for loop that simulates 10000 comparisons as the weapons have a damage range and should provide the weapon that wins the most on average.
+-Added a for loop that goes through each weapon. in the for loop it has: "hp" = max health of the enemy. When it is less than 0 the enemy is dead. "armour" = the amount of armour a character is wearing. this value effects damage reduction. "turns" = the amount of turns it has taken to reduce the hp down to 0. "ignore_armour_percent" = the amount of damage in percentage a weapon will ignore the armour. "eff_armour_percent" = the amount of damage a weapon will do to armour.
+-Added a while loop that will continue to run if the hp is greater than 0. Base damage is calculated here since it is a range it randomises based on its min and max damage.
 The number of turns taken to kill an enemy is stored in the weapons dictionary. The "max_fatigue" variable is the most amount of fatigue it takes to kill an enemy overall.
-- Added a while loop that will continue to run if the armour value is greater than 0. Base damage is calculated here since it is a range it randomises based on its min and max damage. “armour_damage” is from the battle brothers wiki. The “armour” value is reduced here by the “armour_damage” 
+-Added a while loop that will continue to run if the armour value is greater than 0. Base damage is calculated here since it is a range it randomises based on its min and max damage. “armour_damage” is from the battle brothers wiki. The “armour” value is reduced here by the “armour_damage” 
 -Added an if statement that if the armour is greater than 0, calculate the amount of damage that will go through and reduce the hp. If the armour value is less or equal than 0 that means the armour was broken and the remaining damage will go through to reduce the hp. These formulas are based on the battle brother wiki. 
 -Added an if statement that will calculate the damage taken without the reduction of armour.
 -Added an if statement that stores the maximum amount of fatigue it took to reduce an enemy to 0
