@@ -1,4 +1,9 @@
 Changelog:
+01/05/2023 - 
+-Added Two-Handed Saif to weapons dictionary.
+-Added Woodcutters Axe to weapons dictionary.
+-Changed Hammmer to Two-Handed Mallet in weapons dictionary.
+
 30/04/2023 -
 -Added Django framework for creating web app to run the python script.
 -Added Django App "comparison".

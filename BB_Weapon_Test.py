@@ -2,7 +2,7 @@ import random
 
 #This is the dictionary that contains all stats for the weapons availabe for comparison.
 weapon_dict = {
-    "Hammer" : {
+    "Two-Handed Mallet" : {
         "min_damage" : 40,
         "max_damage" : 70,
         "ignore_armour" : .50,
@@ -57,6 +57,20 @@ weapon_dict = {
         "ignore_armour" : .40,
         "eff_armour" : 1.00,
         "fatigue": 10
+    },
+     "Two-Handed Saif": {
+        "min_damage" : 50,
+        "max_damage" : 70,
+        "ignore_armour" : .25,
+        "eff_armour" : .90,
+        "fatigue": 10
+    },
+     "Woodcutters Axe": {
+        "min_damage" : 35,
+        "max_damage" : 70,
+        "ignore_armour" : .40,
+        "eff_armour" : 1.25,
+        "fatigue": 14
     }
             
             }      
@@ -87,11 +101,11 @@ def weapon_comparison(weapon_1, weapon_2):
 
         for i in weapons:
             #Change this based on enemy health.
-            hp = 55
-            #hp = 100
+            #hp = 55
+            hp = 100
             #Change this for value that will reduce damage.
-            armour =  5
-            #armour = 460 
+            #armour =  5
+            armour = 460 
             turns = 0
             ignore_armour_percent = weapon_dict[i]["ignore_armour"]
             eff_armour_percent = weapon_dict[i]["eff_armour"]
@@ -139,4 +153,4 @@ def weapon_comparison(weapon_1, weapon_2):
             return overall[v]
 
 if __name__ == '__main__':
-    weapon_comparison("Morning Star","Light Southern Mace")
+    weapon_comparison("Two-Handed Saif","Crypt Cleaver")
