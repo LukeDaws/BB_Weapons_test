@@ -3,6 +3,15 @@ Changelog:
 -Added Two-Handed Saif to weapons dictionary.
 -Added Woodcutters Axe to weapons dictionary.
 -Changed Hammmer to Two-Handed Mallet in weapons dictionary.
+-Added folder "Templates" in "/BB_Weapons_test_site/comparison".
+-Added front_page.html to templates folder.
+-Changed name of index view to front_page.
+-Added template into front_page view.
+-Changed "path("", views.index, name="index")" to "path("", views.front_page, name="front_page")".
+-Changed columns in Weapons table from models.py where they have "models.DecimalField()" to include "decimal_places= 2" and "max_digits = 5".
+-Changed column "weapon_name" to be the primary key.
+-Added superuser.
+
 
 30/04/2023 -
 -Added Django framework for creating web app to run the python script.
