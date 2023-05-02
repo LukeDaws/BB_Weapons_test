@@ -1,4 +1,32 @@
 Changelog:
+
+02/05/2023 -
+-Changed front_page.html to include list of weapons on the page using python logic.
+-Changed Views.py so it calls the model and gets all weapons values so they can be displayed.
+-Added two-handed mallet to model table.
+-Added details.html that includes all information about selected weapon.
+-Changed front_page.html so that it links to details.html.
+-Changed Views.py and created function to call details.html and provide details of selected weapon.
+-Changed urls.py to include the url to the details.html in the URLPATTERNS list.
+-Added master.html wwith block title and content.
+-Changed name of front_page.html to list.html and updated the required values in views.py and urls.py.
+-Changed list.html and details.html to include and use block tags.
+-Added main.html
+-Fixed link not going to details of weapon by adding "list/" in the Urlpattern list for "details".
+-Changed in settings.py DEBUG = False
+-Changed in settings.py ALLOWED_HOSTS = ['*']
+-Changed 404 webpage to be a customer 404 message.
+-Added Testing to views.py
+Changed Admin.py to display weapon_name, min_damage, max_damage.
+-Added static folder.
+-Changed settings.py to include STATIC_ROOT = BASE_DIR / 'productionfiles' and STATICFILES_DIRS = [
+    BASE_DIR / 'mystaticfiles'
+].
+-Added mystyles.css which includes a navbar, hover over text will increase box size plau other style changes.
+-Added requirements.txt.
+
+
+
 01/05/2023 - 
 -Added Two-Handed Saif to weapons dictionary.
 -Added Woodcutters Axe to weapons dictionary.

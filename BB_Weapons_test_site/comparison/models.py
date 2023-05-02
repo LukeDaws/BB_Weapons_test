@@ -7,4 +7,7 @@ class Weapons(models.Model):
     ignore_armour = models.DecimalField(max_digits = 5, decimal_places= 2)
     eff_armour = models.DecimalField(max_digits = 5, decimal_places= 2)
     fatigue = models.PositiveSmallIntegerField()
+    slug = models.SlugField(default="", null=False)
 
+def __str__(self):
+    return f"{self.weapon_name}"

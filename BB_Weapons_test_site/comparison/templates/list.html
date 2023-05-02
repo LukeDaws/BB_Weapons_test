@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block title %}
+List of weapons in Battle Brothers
+{% endblock %}
+
+{% block content %}
+    
+<div class="mycard">
+<h1>Weapons</h1>
+
+<ul>
+    {% for x in weapons_list %}
+        <li onclick="window.location = 'details/{{ x.slug }}'">{{ x.weapon_name }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

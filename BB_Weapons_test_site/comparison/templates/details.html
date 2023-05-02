@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block title %}
+Details about {{ weapons_list.weapon_name }}
+{% endblock %}
+
+{% block content %}
+        
+<div class="mycard">
+<h1>{{ weapons_list.weapon_name }}</h1>
+
+        <p>Minimum Damage: {{ weapons_list.min_damage }}</p>
+        <p>Maximum Damage: {{ weapons_list.max_damage }}</p>
+        <p>Ignore Armour Percentage: {{ weapons_list.ignore_armour }}</p>
+        <p>Effectivness Against Armour: {{ weapons_list.eff_armour }}</p>
+        <p>Fatigue: {{ weapons_list.fatigue }}</p>
+</div>
+{% endblock %}

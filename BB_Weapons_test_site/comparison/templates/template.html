@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+<title>{% block title %}{% endblock %}</title>
+</head>  
+<body>
+<div class="topnav">
+    <a href="/">HOME</a>
+    <a href="/list">WEAPONS</a>
+</div>
+<table border='1'>
+    <tr>
+        <th>Weapon Name</th>
+        <th>Minimum Damage</th>
+        <th>Maximum Damage</th>
+    </tr>
+    {% for x in weapons_available %}
+     <tr>
+        <td>{{ x.weapon_name }}</td>
+        <td>{{ x.min_damage }}</td>
+        <td>{{ x.max_damage }}</td>
+     </tr>
+     {% endfor %}
+</table>
+
+{% block content %}
+{% endblock %}
+
+    </body>
+</html>
