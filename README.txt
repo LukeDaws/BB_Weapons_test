@@ -8,4 +8,4 @@ Since the weapons have a damage range, for each swing of the weapon the damage i
 
 It is assumed that the weapon will hit everytime and it also doesn't take into account perks.
 
-All damage calcualtions and how armour effects the formulas have been taken from the [[battle brother wiki page|https://battlebrothers.fandom.com/wiki/Combat_Mechanics#Damage]].
+All damage calcualtions and how armour effects the formulas have been taken from the [battle brothers wiki page](https://battlebrothers.fandom.com/wiki/Combat_Mechanics#Damage).
